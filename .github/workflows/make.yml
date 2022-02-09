@@ -26,9 +26,11 @@ jobs:
     - name: build
       run: npm run make
     - name: give all the rights
-      run: chmod - 777 out/make/zip/darwin/x64/ELAN_AnnotStats.app
+      run: chmod -R 777 out/make/zip/darwin/x64/my-app.app
     - name: ship to apps
-      run: cp -R out/make/zip/darwin/x64/ELAN_AnnotStats.app /Applications
+      run: cp -R out/make/zip/darwin/x64/my-app.app /Applications
+    - name: try to start app
+      run: open -a /Applications/my-app.app
 
   #build_on_win:
   #  runs-on: windows-latest
