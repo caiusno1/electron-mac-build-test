@@ -26,9 +26,9 @@ jobs:
     - name: build
       run: npm run make
     - name: give all the rights
-      run: chmod -R 777 out/make/zip/darwin/x64/my-app.app
+      run: chmod -R 777 ./out/make/zip/darwin/x64/my-app.app
     - name: ship to apps
-      run: cp -R out/make/zip/darwin/x64/my-app.app /Applications
+      run: cp -R ./out/make/zip/darwin/x64/my-app.app /Applications
     - name: try to start app
       run: open -a /Applications/my-app.app
 
